@@ -192,7 +192,6 @@ class UserRegistration(Resource):
 
 
 class UserLogin(Resource):
-    @jwt_required
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument(
