@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "15fa78d1-df8c-4c94-b781-b06fd4548567",
+		"name": "expense manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\": \"ashvin2\",\n\"password\":\"ashvin\",\n\"email\":\"a@a.com\"\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/registration",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"ashvin\",\n\t\"password\":\"ashvin\"\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/login",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/users",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Expense categories",
+			"item": [
+				{
+					"name": "create expense category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"category_name\": \"cat_009\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/createExpenseCategory",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"createExpenseCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listExpenseCategories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/listExpenseCategories",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"listExpenseCategories"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Expenses",
+			"item": [
+				{
+					"name": "createExpense",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_id\": 1,\n\t\"total_amount\":5000,\n\t\"expense_category\": 1,\n\t\"divide_it\": [{\n\t\t\t\"user_id\": 1,\n\t\t\t\"amount\": 1000\n\t\t},{\n\t\t\t\"user_id\":1,\n\t\t\t\"amount\": 2000\n\t\t},{\n\t\t\t\"user_id\":1,\n\t\t\t\"amount\": 2000\n\t\t}\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/createExpenses",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"createExpenses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list expanses",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"user_id\":1}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/expenses",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"expenses"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
